@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login , logout
 from django.contrib import messages
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -22,11 +23,23 @@ def get_username(request):
     username = request.POST["username"]
     return username
     
-
-# def goSubject(request):
-#     return redirect("subject_list.html")
-
-# def userCheck(request):
-#     users = User.objects.all()
-#     user = User.objects.get(id=1)  # เปลี่ยน 1 เป็น ID ที่ต้องการ
-#     user = User.objects.get(username='username_here')
+def register(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+        
+        if password1 != password2:
+            messages.error(request, "Passwords do not match!")
+            return redirect('register')
+        
+        if User.objects.filter(username=username).exists():
+            messages.error(request, "Username already exists!")
+            return redirect('register')
+        
+        user = User.objects.create_user(username=username, password=password1)
+        user.save()
+        messages.success(request, "Registration successful! You can now login.")
+        return redirect('/users/login_user')
+    
+    return render(request, 'register.html')

@@ -87,4 +87,3 @@ def del_subject(request, id):
 
     messages.success(request, f"Subject {subject.subjectCode} has been removed from your quota.")
     return redirect('my_quota')
-
