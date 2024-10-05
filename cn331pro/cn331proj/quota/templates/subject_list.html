@@ -26,9 +26,9 @@
                 <td>{{subject.year}}</td>
                 <td>{{subject.seatAvailable}}</td>
                 <td>{{subject.status}}</td>
+                <td><a href="/add_subject/{{subject.subjectCode}}" class="btn btn-success">Add Subject</a></td>
             </tr>
             {% endfor %}
-          
         </tbody>
       </table>
 {% endblock  %}

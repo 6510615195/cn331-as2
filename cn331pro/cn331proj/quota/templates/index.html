@@ -3,10 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to the Course Quota Request</title>
+    <title>Welcome to Course Quota Request</title>
+    <style>
+        /* General styling for body */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #e0eafc, #cfdef3);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Centered container for content */
+        .container {
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
+            border-radius: 10px;
+            max-width: 350px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+
+        /* Minimalistic heading */
+        h1 {
+            font-size: 24px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* Minimal link buttons */
+        a {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 12px 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Simple footer styling */
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
 </head>
 <body>
-    <a href="/users/login">User Login</a>
-    <a href="/admin">Admin Login</a>
+
+    <div class="container">
+        <h1>Welcome to Course Quota Request</h1>
+        <a href="/users/login_user">User Login</a>
+        <a href="/admin">Admin Login</a>
+    </div>
+
 </body>
 </html>

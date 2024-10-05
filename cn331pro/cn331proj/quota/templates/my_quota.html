@@ -13,22 +13,18 @@
             <th scope="col">Subject Name</th>
             <th scope="col">Semester</th>
             <th scope="col">Year</th>
-            <th scope="col">Seat Available</th>
-            <th scope="col">Status</th>
           </tr>
         </thead>
         <tbody>
-            {% for subject in all_subject %}
+            {% for subject in mySubject %}
             <tr>
                 <th scope="row">{{subject.subjectCode}}</th>
                 <td>{{subject.subjectName}}</td>
                 <td>{{subject.semester}}</td>
                 <td>{{subject.year}}</td>
-                <td>{{subject.seatAvailable}}</td>
-                <td>{{subject.status}}</td>
+                <td><a href="/del_subject/{{subject.subjectCode}}" class="btn btn-danger">Withdraw</a></td>
             </tr>
             {% endfor %}
-          
         </tbody>
       </table>
 {% endblock  %}
