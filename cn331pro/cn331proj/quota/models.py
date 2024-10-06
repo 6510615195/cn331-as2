@@ -20,6 +20,5 @@ class registerSubject(models.Model):
     subjectName = models.CharField(max_length=50)  
     semester = models.IntegerField()               
     year = models.IntegerField()                   
-
     def __str__(self):
         return f"{self.subjectName} ({self.subjectCode}) ({self.username})"
