@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 
 class UserLoginTestCase(TestCase):
-    
     def setUp(self):
         self.username = 'username'
         self.password = 'password'
@@ -15,10 +14,11 @@ class UserLoginTestCase(TestCase):
             'username': self.username,
             'password': self.password
         })
-        
-        self.assertRedirects(response, '/subject_list')
 
         self.assertTrue(response.wsgi_request.user.is_authenticated)
+
+        self.assertRedirects(response, '/subject_list')
+
 
     def test_login_fail(self):
         response = self.client.post(reverse('login_user'), {
@@ -33,7 +33,6 @@ class UserLoginTestCase(TestCase):
         self.assertEqual(str(messages_list[0]), "There was an errror logging in, Try again")
 
 class UserRegisterTestCase(TestCase):
-
     def setUp(self):
         self.username = "username"
         self.password = "password"
