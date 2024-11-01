@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 from django.contrib.messages import get_messages
 
 class quotaUrlTestCase(TestCase):
-
     def test_default_status_code(self):
         response = self.client.get(reverse('home'))  
         self.assertEqual(response.status_code, 200)
