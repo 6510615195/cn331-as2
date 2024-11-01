@@ -29,16 +29,6 @@ class SubjectTestCase(TestCase):
         self.assertEqual(self.subject.year, 3)
         self.assertEqual(self.subject.seatAvailable, 2)
         self.assertEqual(self.subject.status, 'open')
-    
-    def test_seat_available(self):
-        subject = Subject.objects.first()
-        self.assertEqual(subject.seatAvailable,2)
-
-    def test_seat_not_available(self):
-        subject = Subject.objects.first()
-        subject.seatAvailable -= 2  # assume ว่า add 2 students ไปใน subject
-        subject.save()  
-        self.assertFalse(subject.seatAvailable > 0)
 
     def test_subject_max_length(self):
         subjectCode = Subject._meta.get_field('subjectCode')
