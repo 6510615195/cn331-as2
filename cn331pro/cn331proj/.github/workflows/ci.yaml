@@ -1,8 +1,5 @@
 name: Testing
-on:
-  push:
-    branches:
-      - testing
+on: push
 
 jobs:
   test_project:
