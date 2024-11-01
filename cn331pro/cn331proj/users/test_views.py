@@ -19,7 +19,6 @@ class UserLoginTestCase(TestCase):
 
         self.assertRedirects(response, '/subject_list')
 
-
     def test_login_fail(self):
         response = self.client.post(reverse('login_user'), {
             'username': self.username,
@@ -65,8 +64,6 @@ class UserRegisterTestCase(TestCase):
         messages_list = list(messages.get_messages(response.wsgi_request))
         self.assertEqual(len(messages_list), 1)
         self.assertEqual(str(messages_list[0]), "Passwords do not match!")
-
-
 
     def test_register_existing_username(self):
         response = self.client.post(reverse('register'), {
